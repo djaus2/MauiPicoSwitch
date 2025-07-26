@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PhoneBtSwitchesApp.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <StackLayout Orientation="Horizontal">
+            <Image
+                Source="bluetooth.svg"
+                HeightRequest="90"
+                Aspect="AspectFit"
+                SemanticProperties.Description="Bluetooth icon" />
+            <Image
+                x:Name="purpleIcon"
+                Source="apurpuple.svg"                
+                HeightRequest="90"
+                Aspect="AspectFit"
+                SemanticProperties.Description="Black Push button switch icon" />
+            <Image
+                x:Name="greenIcon"
+                Source="greenbutton.svg"                
+                HeightRequest="90"
+                Aspect="AspectFit"
+                SemanticProperties.Description="Green Push button switch icon" />
+            <Image
+                x:Name="blueIcon"
+                Source="bluebutton.svg"                
+                HeightRequest="90"
+                Aspect="AspectFit"
+                SemanticProperties.Description="Purple Push button switch icon" />
+            </StackLayout>
+            <Label
+                Text="Arduino BT Switches App!"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Label
+                Text="{Binding State}"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Status of the connection to PicoW" />
+
+            <Button x:Name="ConnectBtn"  Text="Connect to PicoW" Clicked="OnConnectClicked" />
+            <Button x:Name="SendRBtn" BackgroundColor="Purple"  Text="Activate Switch on Pin: 16" Clicked="OnSendRClicked" />
+            <Button x:Name="SendSBtn" BackgroundColor="Green" Text="Activate Switch on Pin: 18" Clicked="OnSendRClicked" />
+            <Button x:Name="SendTBtn" BackgroundColor="Blue" Text="Activate Switch on Pin: 20" Clicked="OnSendRClicked" />
+            <Button x:Name ="DisconnectBtn" Text="Disconnect from PicoW" Clicked="OnDisconnectClicked" />
+            <Editor Text="{Binding Msg}" IsReadOnly="True" />
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Switch: " />
+                <Label Text="{Binding SwitchNo}"/>
+            </StackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
