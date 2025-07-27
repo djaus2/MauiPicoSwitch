@@ -50,7 +50,7 @@ State changes in teh sketch are actioned by sending specific chars to it over Se
 
 ## Messages
 
-As stated, these are sent as chars. The following is the state changes from received chars by teh phone app:
+As stated, these are sent as chars. The following is the state changes from received chars by the phone app:
 
 ```cs
 public void OnCharCmdReceived(char c)
