@@ -115,3 +115,4 @@ Note that ```OnCharCmdReceived()``` is called in the MainThread context which me
 
 ## Bluetooth
 
+The suite uses the Bluetooth Classic  ```Bluetooth Serial Profile (SPP)``` for communication between the devices. It passes messages as single characters as in the OnCharCmdReceived() method above which shows the messages sent from the Pico and how they are interpretted on the phone. The phone and Pico need to be paired, and this is initiated by the phone app. When connecting, the phone app determines all paired devices and then looks for the string associated with Picos Bluetooth profile (actually a 10 character substring of it).
