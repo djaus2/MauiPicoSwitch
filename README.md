@@ -15,7 +15,7 @@ An Android phone app that connects to a Rpi Pico W in Arduino mode, over Classic
 ### PicoSwitch Sketch
   - Runs on a Rpi Pico W
     - Configured as an Arduino device.
-      - Using the [earlephilhower//arduino-pico BSP](https://github.com/earlephilhower/arduino-pico)
+      - Using the [earlephilhower//arduino-pico](https://github.com/earlephilhower/arduino-pico) BSP.
     - Could be simply modified for other Android devices
   - Is connected to by the phone app using Bluetooth, and is then in Idle mode.
   - Phone can then enable one of 3 physical switches on the Pico, at a time.
