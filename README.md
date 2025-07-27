@@ -33,7 +33,10 @@ Both apps are state machines. The states are
         Released
     }
 ```
-To discern which button has been activated in the phone app, there is also a ```SwitchNo``` property which is the pin number that the activated button is connected to onbthe Arduino device.
+To discern which button has been activated in the phone app, there is also a ```SwitchNo``` property which is the pin number that the activated button is connected to on bthe Arduino device. This can be one of:
 ```cs
+16
+18
+20
 ```
 
