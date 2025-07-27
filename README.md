@@ -1,5 +1,7 @@
 # MauiPicoSwitch
 
+An Android phone app that connects to a Rpi Pico W in Arduino mode, over Classic Serial Bluetooth where 3 switches can trigger actions on the phone.  Bluetooth pairing by the phone between the phone and Pico device is handle programmatically for all paired/unpaired contexts.
+
 ## Apps
 
 ### MauiPicoSwitch
