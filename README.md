@@ -121,7 +121,7 @@ The suite uses the Bluetooth Classic  ```Bluetooth Serial Profile (SPP)``` for c
   - If this fails you have the option to delete this entry.
     - Either way you return to the app where eyou can initiate the connection again. 
 - If the Pico string is not found in the list of paired devices, then you can initiate a new pairing.
-  - You will get an OS popup dialog with a code.
+  - When and if the Pico is found, you will get an OS popup dialog with a code.
   - You accept this regardless of the pin _(which will be different for each new pairing)_ and the devices are paired.
   - It then attempts to connect.
 > Note that if the Sketch has had a new deployment of its code, then the existing pairing for it WILL fail. In that case you take the option of deleting as above, and restart the connection, where it will activate the pairing as covered here.
