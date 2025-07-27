@@ -3,7 +3,7 @@
 ## Apps
 
 ### MauiPicoSwitch
-  - A Maui Android 
+  - A Maui Android Phone App
   - Connects to the bluetoothswitch sketch over Bluetooth
   - Can then enable one of 3 physical switches on the Pico, at a time.
   - When enabled, the button pressed and released events are received from the sketch
@@ -11,7 +11,7 @@
     - As coded here, a Toast pops up.
    - Can disconnect from the device
 ### BluetoothPicoSwitch Sketch
-  - Runs on Pico W 
+  - Runs on Rpi Pico W 
   - Is connected to by the phone app using Bluetooth, and is then in Idle mode.
   - Phone can then enable one of 3 physical switches on the Pico, at a time.
     - It is then in Ready mode.
