@@ -46,3 +46,70 @@ bool waiting4switch18 = false;
 bool waiting4switch20 = false;
 ```
 
+State changes in teh sketch are actioned by sending specific chars to it over Serial Bluetooth.  It then returns events and acknowledgements as specific chars.
+
+## Messages
+
+As stated these are sent as chars. The following is the state changes from received chars by teh phone app:
+
+```cs
+public void OnCharCmdReceived(char c)
+{
+    c= char.ToUpper(c);
+    switch (State)
+    {
+        case DeviceState.NotConnected when c == 'C':
+            State= DeviceState.Idle; 
+            break;
+        case DeviceState.Idle when c == 'K':
+            State = DeviceState.Ready;
+            break;
+        case DeviceState.Ready when c == 'A':
+            State = DeviceState.Pressed;
+            SwitchNo = 16;
+            break;
+        case DeviceState.Pressed when c == 'B':
+            State = DeviceState.Released;
+            break;
+        case DeviceState.Ready when c == 'C':
+            State = DeviceState.Pressed;
+            SwitchNo = 18;
+            break;
+        case DeviceState.Pressed when c == 'D':
+            State = DeviceState.Released;
+            break;
+        case DeviceState.Ready when c == 'E':
+            State = DeviceState.Pressed;
+            SwitchNo = 20;
+            break;
+        case DeviceState.Pressed when c == 'F':
+            State = DeviceState.Released;
+            break;
+        case DeviceState.Released when c == 'I':
+            State = DeviceState.Idle;
+            break;
+        default:
+            _state = DeviceState.NotConnected;
+            break;
+    }
+}
+```
+This is called by the serial reception method:
+```cs
+    void OnCharReceived(char c)
+    {
+        MainThread.BeginInvokeOnMainThread(() =>
+        {
+            bool isAlphanumeric = char.IsLetterOrDigit(c);
+
+            if (isAlphanumeric)
+            {
+                AppViewModel.OnCharCmdReceived(c);
+            }
+        });
+    }
+```
+Note that ```OnCharCmdReceived()``` is called in the MainThread context which means is can cause UI updates.
+
+## Bluetooth
+
