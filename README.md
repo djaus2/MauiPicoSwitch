@@ -115,6 +115,13 @@ Note that ```OnCharCmdReceived()``` is called in the MainThread context which me
 
 ## Bluetooth
 
-The suite uses the Bluetooth Classic  ```Bluetooth Serial Profile (SPP)``` for communication between the devices. It passes messages as single characters as in the OnCharCmdReceived() method above which shows the messages sent from the Pico and how they are interpretted on the phone. The phone and Pico need to be paired, and this is initiated by the phone app. When connecting, the phone app determines all paired devices and then looks for the string associated with Picos Bluetooth profile (actually a 10 character substring of it). If found it then connects.  If this fails you have the option to delete this entry. Either way you return to the app where eyou can initiate the connection again. 
-If the Pico string is not found in the list of paired devices, then you can initiate a new pairing. You will get an OS popup dialog with a code. You accept this regardless of the pin _(which will be different for each new pairing)_ and the devices are paired. It then attempts to connect.
+The suite uses the Bluetooth Classic  ```Bluetooth Serial Profile (SPP)``` for communication between the devices. It passes messages as single characters as in the OnCharCmdReceived() method above which shows the messages sent from the Pico and how they are interpretted on the phone. The phone and Pico need to be paired and connected, and this is initiated by the phone app. 
+- When connecting, the phone app determines all paired devices and then looks for the string associated with Picos Bluetooth profile (actually a 10 character substring of it)
+  - If found it then connects.
+  - If this fails you have the option to delete this entry.
+    - Either way you return to the app where eyou can initiate the connection again. 
+- If the Pico string is not found in the list of paired devices, then you can initiate a new pairing.
+  - You will get an OS popup dialog with a code.
+  - You accept this regardless of the pin _(which will be different for each new pairing)_ and the devices are paired.
+  - It then attempts to connect.
 Note that if the Sketch has had a new deployment of its code, then the existing pairing for it WILL fail. In that case you take the option of deleting as above, and restart the connection, where it will activate teh pairing as covered here.
