@@ -39,7 +39,7 @@ To discern which button has been activated by the phone app, there is also a ```
 18
 20
 ```
-The Sketch uses a set of mutuially exclusive booleans to discern which button is the active one _(this code could be improves)_:
+The Sketch uses a set of mutually exclusive booleans to discern which button is the active one _(this code could be improved)_:
 ```cpp
 bool waiting4switch16 = false;
 bool waiting4switch18 = false;
