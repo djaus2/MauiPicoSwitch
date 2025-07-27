@@ -109,7 +109,7 @@ This is called by the serial reception method:
         });
     }
 ```
-Note that ```OnCharCmdReceived()``` is called in the MainThread context which means is can cause UI updates.
+Note that ```OnCharCmdReceived()``` is called in the MainThread context which means it can cause UI updates.
 
 ## Bluetooth
 
