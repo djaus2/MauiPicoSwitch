@@ -33,10 +33,16 @@ Both apps are state machines. The states are
         Released
     }
 ```
-To discern which button has been activated in the phone app, there is also a ```SwitchNo``` property which is the pin number that the activated button is connected to on bthe Arduino device. This can be one of:
+To discern which button has been activated by the phone app, there is also a ```SwitchNo``` property in th e phone app, which is the pin number that the activated button is connected to on the Arduino device. This can be one of:
 ```cs
 16
 18
 20
+```
+The Sketch uses a set of mutuially exclusive booleans to discern which button is the active one _(this code could be improves)_:
+```cpp
+bool waiting4switch16 = false;
+bool waiting4switch18 = false;
+bool waiting4switch20 = false;
 ```
 
