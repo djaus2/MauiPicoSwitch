@@ -39,14 +39,16 @@ public partial class MainPage : ContentPage
         Colrs = new Stack<Color>();
         BindingContext = AppViewModel;
         AppViewModel.PropertyChanged += OnPropertyChangedx;
+        
+
 
     }
 
-    //protected override void OnAppearing()
-    //{
-    //    base.OnAppearing();
-    //    //AppViewModel.State = DeviceState.NotConnected;
-    //}
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+        AppViewModel.State = DeviceState.NotConnected;
+    }
 
 
     private void OnPropertyChangedx(object? sender, PropertyChangedEventArgs e)
@@ -170,7 +172,10 @@ public partial class MainPage : ContentPage
     private async Task OnSendRClickedAsync(object sender, EventArgs e)
     {
         //Nb: VisualStateManager.GoToState(myButton, myButton.IsEnabled ? "Normal" : "Disabled");
-
+        var tintBehavior = new IconTintColorBehavior
+        {
+            TintColor = Colors.Gray // Or Colors.Black when enabled
+        };
         Button button = (Button)sender;
         Color clr = button.BackgroundColor;
         Colrs.Push(clr);
@@ -214,7 +219,7 @@ public partial class MainPage : ContentPage
                 switch (AppViewModel.SwitchNo)
                 {
                     case 16:
-                        //Can inser\t call to method here
+                        //Can insert a call to method here
                         await Toast.Make("Button 16 pressed.", ToastDuration.Short, 14).Show();
                         break;
                     case 18:
@@ -225,6 +230,8 @@ public partial class MainPage : ContentPage
                         break;
                 }
                 //Wait for button release
+                icon.Behaviors.Clear();
+                icon.Behaviors.Add(tintBehavior);
                 while (AppViewModel.State != DeviceState.Released)
                 {
                     await Task.Delay(100); // Wait for the device to respond
@@ -233,7 +240,7 @@ public partial class MainPage : ContentPage
                 switch (AppViewModel.SwitchNo)
                 {
                     case 16:
-                        //Can insert call to method here
+                        //Can also insert calll to a method here
                         await Toast.Make("Button 16 released.", ToastDuration.Short, 14).Show();
                         break;
                     case 18:

@@ -1,5 +1,7 @@
 #include <SerialBT.h> 
 
+//#define USESERIAL
+
 #define debounce 2000;
 
 bool lastState = false;
@@ -7,13 +9,22 @@ bool ready = false;
 unsigned long startTime = 0;
 unsigned long Debounce = debounce;
 
+// The buttons' digital pin on Rpi Pico W
+// Are active low (when pressed)
 #define SWITCH_PIN16 16
 #define SWITCH_PIN18 18
 #define SWITCH_PIN20 20
 
+// LEDs are normal low (off).
+// When a button is "set" its cprresponding LED hoes high
+// Buttons' corresponing LED digital pin
 #define LED_PIN26  26
 #define LED_PIN27  27
 #define LED_PIN28  28
+
+// When a button is pressed, how long in ms a LED goes low before going high again.
+#define flash 333
+// Nb. When button is released its LED goes low
 
 
 bool doneReady = false;
@@ -34,9 +45,12 @@ void setup()
   digitalWrite(LED_PIN26, LOW);
   digitalWrite(LED_PIN27, LOW);
   digitalWrite(LED_PIN28, LOW);
- 7,
-  Serial.begin((9600));
-  while(!Serial);
+  
+  #ifdef USESERIAL
+    Serial.begin((9600));
+    while(!Serial);
+  #endif
+
   SerialBT.setName("PicoW uPPERCASE"); // 00:00:00:00:00:00"); 
   SerialBT.begin(); 
   while(!SerialBT);
@@ -75,6 +89,8 @@ void loop()
           {
             SerialBT.write('A'); 
             Serial.println('A'); 
+            digitalWrite(LED_PIN26, LOW);
+            delay(flash);
             digitalWrite(LED_PIN26, HIGH);
             startTime = millis();
           }
@@ -103,6 +119,8 @@ void loop()
           {
             SerialBT.write('C'); 
             Serial.println('C'); 
+            digitalWrite(LED_PIN27, LOW);
+            delay(flash);
             digitalWrite(LED_PIN27, HIGH);
             startTime = millis();
           }
@@ -132,6 +150,8 @@ void loop()
             SerialBT.write('E'); 
             Serial.println('E'); 
             startTime = millis();
+            digitalWrite(LED_PIN28, LOW);
+            delay(flash);
             digitalWrite(LED_PIN28, HIGH);
           }
           else
@@ -164,12 +184,14 @@ void loop()
           while (SerialBT.available()) {
             char c = SerialBT.read();
           }
+            waiting4switch16=false;
+            waiting4switch18=false;
+            waiting4switch20=false;
           if(c=='R')
           {
             ready=true;
             waiting4switch16=true;
-            waiting4switch18=false;
-            waiting4switch20=false;
+            digitalWrite(LED_PIN26, HIGH);
             lastState = !digitalRead(SWITCH_PIN16);
             Serial.print("LastState: ");
             Serial.println(lastState);
@@ -178,9 +200,8 @@ void loop()
           else if(c=='S')
           {
             ready=true;
-            waiting4switch16=false;
             waiting4switch18=true;
-            waiting4switch20=false;
+            digitalWrite(LED_PIN27, HIGH);
             lastState = !digitalRead(SWITCH_PIN18);
             Serial.print("LastState: ");
             Serial.println(lastState);
@@ -189,9 +210,8 @@ void loop()
           else if(c=='T')
           {
             ready=true;
-            waiting4switch16=false;
-            waiting4switch18=false;
             waiting4switch20=true;
+            digitalWrite(LED_PIN28, HIGH);
             lastState = !digitalRead(SWITCH_PIN20);
             Serial.print("LastState: ");
             Serial.println(lastState);
