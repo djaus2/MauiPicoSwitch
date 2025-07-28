@@ -42,6 +42,13 @@ public partial class MainPage : ContentPage
 
     }
 
+    //protected override void OnAppearing()
+    //{
+    //    base.OnAppearing();
+    //    //AppViewModel.State = DeviceState.NotConnected;
+    //}
+
+
     private void OnPropertyChangedx(object? sender, PropertyChangedEventArgs e)
     {
 
