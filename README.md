@@ -4,7 +4,7 @@ An Android phone app that connects to a Rpi Pico W in Arduino mode, over Classic
 
 ## Apps
 
-### BlueSwitch
+### BlueButtons
   - A Maui Android _(only)_ Phone App
   - Connects to the PicoSwitch sketch over Bluetooth
   - Can then enable one of 3 physical switches on the Pico, at a time.
@@ -12,7 +12,7 @@ An Android phone app that connects to a Rpi Pico W in Arduino mode, over Classic
   - Each individual button event can then call an in-app method.
     - As coded here, a Toast pops up.
    - Can disconnect from the device
-### PicoSwitch Sketch
+### PicoButtons Sketch
   - Runs on a Rpi Pico W
     - Configured as an Arduino device.
       - Using the [earlephilhower//arduino-pico](https://github.com/earlephilhower/arduino-pico) BSP.

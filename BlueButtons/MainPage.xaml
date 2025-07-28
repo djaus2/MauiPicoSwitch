@@ -16,7 +16,7 @@
                 SemanticProperties.Description="Bluetooth icon" />
             <Image
                 x:Name="purpleIcon"
-                Source="apurpuple.svg"                
+                Source="redbutton.svg"                
                 HeightRequest="90"
                 Aspect="AspectFit"
                 SemanticProperties.Description="Black Push button switch icon" />
@@ -34,7 +34,7 @@
                 SemanticProperties.Description="Purple Push button switch icon" />
             </StackLayout>
             <Label
-                Text="Arduino BT Switches App!"
+                Text="Remote Buttons via Bluetooth"
                 Style="{StaticResource Headline}"
                 SemanticProperties.HeadingLevel="Level1" />
 
@@ -45,12 +45,13 @@
                 SemanticProperties.Description="Status of the connection to PicoW" />
 
             <Button x:Name="ConnectBtn"  Text="Connect to PicoW" Clicked="OnConnectClicked" />
-            <Button x:Name="SendRBtn" BackgroundColor="Purple"  Text="Activate Switch on Pin: 16" Clicked="OnSendRClicked" />
-            <Button x:Name="SendSBtn" BackgroundColor="Green" Text="Activate Switch on Pin: 18" Clicked="OnSendRClicked" />
-            <Button x:Name="SendTBtn" BackgroundColor="Blue" Text="Activate Switch on Pin: 20" Clicked="OnSendRClicked" />
+            <Button x:Name="SendRBtn" BackgroundColor="Red"  Text="Activate Button on Pin: 16" Clicked="OnSendRClicked"/>
+            <Button x:Name="SendSBtn" BackgroundColor="Green" Text="Activate Button on Pin: 18" Clicked="OnSendRClicked" />
+            <Button x:Name="SendTBtn" BackgroundColor="Blue" Text="Activate Button on Pin: 20" Clicked="OnSendRClicked" />
             <Button x:Name ="DisconnectBtn" Text="Disconnect from PicoW" Clicked="OnDisconnectClicked" />
-            <Editor Text="{Binding Msg}" IsReadOnly="True" />
+            
             <StackLayout Orientation="Horizontal">
+                <Label Text="{Binding Msg}"  WidthRequest="100"/>
                 <Label Text="Switch: " />
                 <Label Text="{Binding SwitchNo}"/>
             </StackLayout>

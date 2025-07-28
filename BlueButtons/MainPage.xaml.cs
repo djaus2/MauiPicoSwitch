@@ -29,12 +29,14 @@ public class BluetoothPermissions : Permissions.BasePlatformPermission
 public partial class MainPage : ContentPage
 {
     int count = 0;
+    Stack<Color> Colrs = new Stack<Color>();
 
     AppViewModel AppViewModel { get; } = new AppViewModel();
 
     public MainPage()//MainPageModel model)
     {
         InitializeComponent();
+        Colrs = new Stack<Color>();
         BindingContext = AppViewModel;
         AppViewModel.PropertyChanged += OnPropertyChangedx;
 
@@ -160,11 +162,13 @@ public partial class MainPage : ContentPage
 
     private async Task OnSendRClickedAsync(object sender, EventArgs e)
     {
-        var tintBehavior = new IconTintColorBehavior
-        {
-            TintColor = Colors.Gray // Or Colors.Black when enabled
-        };
+        //Nb: VisualStateManager.GoToState(myButton, myButton.IsEnabled ? "Normal" : "Disabled");
+
         Button button = (Button)sender;
+        Color clr = button.BackgroundColor;
+        Colrs.Push(clr);
+        button.BackgroundColor = Colors.Gray;
+
         var name = button.Text;
         char ch = 'R';
         var icon = purpleIcon;
@@ -200,8 +204,6 @@ public partial class MainPage : ContentPage
                 {
                     await Task.Delay(100); // Wait for the device to respond
                 }
-                icon.Behaviors.Clear();
-                icon.Behaviors.Add(tintBehavior);
                 switch (AppViewModel.SwitchNo)
                 {
                     case 16:
@@ -234,6 +236,8 @@ public partial class MainPage : ContentPage
                         await Toast.Make("Button 20 released.", ToastDuration.Short, 14).Show();
                         break;
                 }
+                var clr2 = Colrs.Pop();
+                button.BackgroundColor = clr2;
 
                 await Task.Delay(333);
                 AppViewModel.OnCharCmdReceived('I'); // Reset state to Idle

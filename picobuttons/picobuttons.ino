@@ -11,6 +11,11 @@ unsigned long Debounce = debounce;
 #define SWITCH_PIN18 18
 #define SWITCH_PIN20 20
 
+#define LED_PIN26  26
+#define LED_PIN27  27
+#define LED_PIN28  28
+
+
 bool doneReady = false;
 bool waiting4switch16 = false;
 bool waiting4switch18 = false;
@@ -21,7 +26,15 @@ void setup()
   pinMode(SWITCH_PIN16, INPUT_PULLUP);
   pinMode(SWITCH_PIN18, INPUT_PULLUP);
   pinMode(SWITCH_PIN20, INPUT_PULLUP);
- 
+
+  pinMode(LED_PIN26, OUTPUT);
+  pinMode(LED_PIN27, OUTPUT);
+  pinMode(LED_PIN28, OUTPUT);
+
+  digitalWrite(LED_PIN26, LOW);
+  digitalWrite(LED_PIN27, LOW);
+  digitalWrite(LED_PIN28, LOW);
+ 7,
   Serial.begin((9600));
   while(!Serial);
   SerialBT.setName("PicoW uPPERCASE"); // 00:00:00:00:00:00"); 
@@ -62,12 +75,14 @@ void loop()
           {
             SerialBT.write('A'); 
             Serial.println('A'); 
+            digitalWrite(LED_PIN26, HIGH);
             startTime = millis();
           }
           else
           {
             SerialBT.write('B'); 
             Serial.println('B'); 
+            digitalWrite(LED_PIN26, LOW);
 
             ready = false;
             doneReady = false;
@@ -88,12 +103,14 @@ void loop()
           {
             SerialBT.write('C'); 
             Serial.println('C'); 
+            digitalWrite(LED_PIN27, HIGH);
             startTime = millis();
           }
           else
           {
             SerialBT.write('D'); 
             Serial.println('D'); 
+            digitalWrite(LED_PIN27, LOW);
 
             ready = false;
             doneReady = false;
@@ -115,11 +132,13 @@ void loop()
             SerialBT.write('E'); 
             Serial.println('E'); 
             startTime = millis();
+            digitalWrite(LED_PIN28, HIGH);
           }
           else
           {
             SerialBT.write('F'); 
             Serial.println('F'); 
+            digitalWrite(LED_PIN28, LOW);
 
             ready = false;
             doneReady = false;

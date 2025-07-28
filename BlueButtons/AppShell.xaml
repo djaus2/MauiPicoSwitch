@@ -8,7 +8,7 @@
     Title="MauiApp5">
 
     <ShellContent
-        Title="PicoSwitches"
+        Title="BlueButtons"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 
