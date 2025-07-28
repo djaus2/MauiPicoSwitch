@@ -38,7 +38,7 @@ Both apps are state machines. The states are
         Idle,         // All 3 app Activate Buttons plus Disconnect enabled
         Ready,        // All phone app buttons diabled
         Pressed,      // No change
-        Released      // No changed  ... as this is only momentary
+        Released      // No changed  ... as this is only momentary (Transitions to Idle)
     }
 ```
 To discern which button has been activated by the phone app, there is also a ```SwitchNo``` property in th e phone app, which is ...  pin number that the activated button is connected to on the Arduino device. This can be one of:
