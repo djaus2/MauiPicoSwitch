@@ -174,4 +174,5 @@ https://github.com/user-attachments/assets/c05d2b6c-5275-4d80-86b8-aee01d7c8c96
 > 
 https://github.com/user-attachments/assets/8e089625-9472-46ad-9842-f24444111360
 
+![PicoSwitches](https://github.com/user-attachments/assets/e4baf986-6061-4334-aa9b-0140f6f3b78d)
 
