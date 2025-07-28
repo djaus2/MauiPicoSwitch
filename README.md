@@ -121,7 +121,7 @@ Note that ```OnCharCmdReceived()``` is called in the MainThread context which me
 
 ## Activation by Pico
 
-> Phone App waits for DeviceState.Pressed state (eevent). Then can call a method etc depending upon which button was activated:<
+> Phone App waits for DeviceState.Pressed state (eevent). Then can call a method etc depending upon which button was activated:
 
 ```cs
     private async Task OnSendRClickedAsync(object sender, EventArgs e)
