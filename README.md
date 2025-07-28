@@ -197,7 +197,7 @@ The suite uses the Bluetooth Classic  ```Bluetooth Serial Profile (SPP)``` for c
 (https://github.com/user-attachments/assets/b6c6345e-8b7d-48b1-9ccc-e1d50fe06a44)
 
 ## Image
-[![Click to see sketch video](https://github.com/user-attachments/assets/4343a9a5-f651-484d-a6fa-9bf7601b7413)](https://davidjones.sportronics.com.au)
+[![Click to see sketch video](https://github.com/user-attachments/assets/4343a9a5-f651-484d-a6fa-9bf7601b7413)]((https://github.com/user-attachments/assets/c05d2b6c-5275-4d80-86b8-aee01d7c8c96))
 
 ## ftggvb Image
 ![View Video](https://github.com/user-attachments/assets/4343a9a5-f651-484d-a6fa-9bf7601b7413)
