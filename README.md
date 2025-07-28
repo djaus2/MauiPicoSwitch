@@ -167,9 +167,9 @@ The suite uses the Bluetooth Classic  ```Bluetooth Serial Profile (SPP)``` for c
 > Note that if the Sketch has had a new deployment of its code, then the existing pairing for it WILL fail. In that case you take the option of deleting as above, and restart the connection, where it will activate the pairing as covered here.
 
 
-https://github.com/user-attachments/assets/c05d2b6c-5275-4d80-86b8-aee01d7c8c96
+https://github.com/user-attachments/assets/c05d2b6c-5275-4d80-86b8-aee01d7c8c96 
 
-
+> In the video above , the phone app is connected to the sketch as below. The switch/button on the Pico's GPIO  is activated; its corresponding LED is actiavted. When pressed the LED flashes but stays on until the button is released. This is then repeated for the buttons on GPIO pins 18 and 20.
 
 https://github.com/user-attachments/assets/8e089625-9472-46ad-9842-f24444111360
 
