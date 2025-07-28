@@ -168,10 +168,10 @@ The suite uses the Bluetooth Classic  ```Bluetooth Serial Profile (SPP)``` for c
 
 ---
 
-| First Header | Second Header |
+|  |  |
 | ------------ | ------------- |
-| ![PicoSwitches](https://github.com/user-attachments/assets/e4baf986-6061-4334-aa9b-0140f6f3b78d) | ![PicoSwitches](https://github.com/user-attachments/assets/e4baf986-6061-4334-aa9b-0140f6f3b78d)  | ![PicoSwitches](https://github.com/user-attachments/assets/e4baf986-6061-4334-aa9b-0140f6f3b78d) | ![PicoSwitches](https://github.com/user-attachments/assets/e4baf986-6061-4334-aa9b-0140f6f3b78d)  |
-| [![Click to see phone app](https://github.com/user-attachments/assets/a14de32a-fc7d-4547-b854-5b693821073c)](https://github.com/user-attachments/assets/c05d2b6c-5275-4d80-86b8-aee01d7c8c96) | [![Click to see Pico]()](https://github.com/user-attachments/assets/8e089625-9472-46ad-9842-f24444111360) |https://github.com/user-attachments/assets/f1286f97-192a-4159-89c3-51b8b8ba5995
+| ![PicoSwitches](https://github.com/user-attachments/assets/e4baf986-6061-4334-aa9b-0140f6f3b78d) | ![PicoSwitches](https://github.com/user-attachments/assets/e4baf986-6061-4334-aa9b-0140f6f3b78d)  |
+| [![Click to see phone app](https://github.com/user-attachments/assets/a14de32a-fc7d-4547-b854-5b693821073c)](https://github.com/user-attachments/assets/c05d2b6c-5275-4d80-86b8-aee01d7c8c96) | [![Click to see Pico](https://github.com/user-attachments/assets/f1286f97-192a-4159-89c3-51b8b8ba5995)](https://github.com/user-attachments/assets/8e089625-9472-46ad-9842-f24444111360) |
 
 <img width="2122" height="1450" alt="sketch" src="https://github.com/user-attachments/assets/f1286f97-192a-4159-89c3-51b8b8ba5995" />
 
@@ -182,5 +182,9 @@ The suite uses the Bluetooth Classic  ```Bluetooth Serial Profile (SPP)``` for c
 
 
 
+
+
+
+https://github.com/user-attachments/assets/b06ad9e0-9034-4447-b157-dee93e7d2d23
 
 
