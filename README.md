@@ -119,6 +119,35 @@ This is called by the serial reception method:
 ```
 Note that ```OnCharCmdReceived()``` is called in the MainThread context which means it can cause UI updates.
 
+## Activation by Pico
+
+> Phone App waits for DeviceState.Pressed state (eevent). Then can call a method etc depending upon which button was activated: 
+
+```cs
+    private async Task OnSendRClickedAsync(object sender, EventArgs e)
+    {
+          ...
+          ...
+          while (AppViewModel.State < DeviceState.Pressed) //Could be released by here
+          {
+              await Task.Delay(100); // Wait for the device to respond
+          }
+          switch (AppViewModel.SwitchNo)
+          {
+              case 16:
+                  //Can insert a call to method here
+                  await Toast.Make("Button 16 pressed.", ToastDuration.Short, 14).Show();
+                  break;
+              case 18:
+                  await Toast.Make("Button 18 pressed.", ToastDuration.Short, 14).Show();
+                  break;
+              case 20:
+                  await Toast.Make("Button 20 pressed.", ToastDuration.Short, 14).Show();
+                  break;
+          }
+```
+> There is a similar switch code for the released event but it would be the pressed event that would normally be used to trigger in phone actions;
+
 ## Bluetooth
 
 The suite uses the Bluetooth Classic  ```Bluetooth Serial Profile (SPP)``` for communication between the devices. It passes messages as single characters as in the OnCharCmdReceived() method above which shows the messages sent from the Pico and how they are interpretted on the phone. The phone and Pico need to be paired and connected, and this is initiated by the phone app. 
