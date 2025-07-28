@@ -127,3 +127,8 @@ The suite uses the Bluetooth Classic  ```Bluetooth Serial Profile (SPP)``` for c
   - You accept this regardless of the pin _(which will be different for each new pairing)_ and the devices are paired.
   - It then attempts to connect.
 > Note that if the Sketch has had a new deployment of its code, then the existing pairing for it WILL fail. In that case you take the option of deleting as above, and restart the connection, where it will activate the pairing as covered here.
+
+
+https://github.com/user-attachments/assets/c05d2b6c-5275-4d80-86b8-aee01d7c8c96
+
+
