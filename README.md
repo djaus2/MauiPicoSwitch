@@ -168,6 +168,14 @@ The suite uses the Bluetooth Classic  ```Bluetooth Serial Profile (SPP)``` for c
 
 ---
 <table>
+    <tr>
+    <td>
+      ![PicoSwitches](https://github.com/user-attachments/assets/e4baf986-6061-4334-aa9b-0140f6f3b78d) 
+    </td>
+    <td>
+      ![PicoSwitches](https://github.com/user-attachments/assets/e4baf986-6061-4334-aa9b-0140f6f3b78d)
+    </td>
+  </tr>
   <tr>
     <td>
       https://github.com/user-attachments/assets/c05d2b6c-5275-4d80-86b8-aee01d7c8c96 
@@ -177,10 +185,10 @@ The suite uses the Bluetooth Classic  ```Bluetooth Serial Profile (SPP)``` for c
     </td>
   </tr>
 
-</tabble>table>
+</tabble>
 > In the video above , the phone app is connected using Bluetooth to the sketch as below. Push Buttons are on the right and corresponding LEDS are on the left. The switch/button on the Pico's GPIO pin 16 is activated; its corresponding LED is actiavted. When pressed the LED flashes but stays on until the button is released. This is then repeated for the buttons on GPIO pins 18 and 20. Note the corresponding icons for each button animate the pressing as well.
 
 
 
-![PicoSwitches](https://github.com/user-attachments/assets/e4baf986-6061-4334-aa9b-0140f6f3b78d)
+
 
