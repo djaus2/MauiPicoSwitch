@@ -20,7 +20,11 @@ An Android phone app that connects to a Rpi Pico W in Arduino mode, over Classic
   - Is connected to by the phone app using Bluetooth, and is then in Idle mode.
   - Phone can then enable one of 3 physical switches on the Pico, at a time.
     - It is then in Ready mode.
-  - The pressed and then released events are sent to the phone
+    - Its corresponding LED is activated
+    - The pressed event is sent to the phone when button is pressed.
+      - The LED flashes Off/On
+    - The released event is sent when the button is released.
+      - LED is turned off.
   - It then returns to Idle mode
 
 ## App States
@@ -30,14 +34,14 @@ Both apps are state machines. The states are
 ```cs
     public enum DeviceState
     {
-        NotConnected,
-        Idle,
-        Ready,
-        Pressed,
-        Released
+        NotConnected, // All phone app buttons disabled except Connect
+        Idle,         // All 3 app Activate Buttons plus Disconnect enabled
+        Ready,        // All phone app buttons diabled
+        Pressed,      // No change
+        Released      // No changed  ... as this is only momentary
     }
 ```
-To discern which button has been activated by the phone app, there is also a ```SwitchNo``` property in th e phone app, which is the pin number that the activated button is connected to on the Arduino device. This can be one of:
+To discern which button has been activated by the phone app, there is also a ```SwitchNo``` property in th e phone app, which is ...  pin number that the activated button is connected to on the Arduino device. This can be one of:
 ```cs
 16
 18
