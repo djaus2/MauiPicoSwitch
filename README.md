@@ -173,7 +173,7 @@ The suite uses the Bluetooth Classic  ```Bluetooth Serial Profile (SPP)``` for c
 
 <table style="border-collapse: collapse;">
       <td align="center">PicoButtons Sketch Logical</td>
-    <td align="Center">PicoButtons Sketch Physical/td>
+    <td align="Center">PicoButtons Sketch Physical</td>
     <tr>
     <td valign="bottom" style="border: none;">
 <img width="400" alt="shieldconnections" src="https://github.com/user-attachments/assets/a9910a33-64ff-4b2d-9613-9ba22136141f" />
