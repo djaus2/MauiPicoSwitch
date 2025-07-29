@@ -168,15 +168,7 @@ The suite uses the Bluetooth Classic  ```Bluetooth Serial Profile (SPP)``` for c
 
 ---
 
-|  |  |
-| ------------ | ------------- |
-| ![PicoSwitches](https://github.com/user-attachments/assets/e4baf986-6061-4334-aa9b-0140f6f3b78d) | ![mm](https://github.com/user-attachments/assets/f1286f97-192a-4159-89c3-51b8b8ba5995)  |
-| [![Click to see phone app](https://github.com/user-attachments/assets/a14de32a-fc7d-4547-b854-5b693821073c)](https://github.com/user-attachments/assets/c05d2b6c-5275-4d80-86b8-aee01d7c8c96) | <-- Click to see video of phone app |
-
-> In the video above , the phone app is connected using Bluetooth to the sketch as below. Push Buttons are on the right and corresponding LEDS are on the left. The switch/button on the Pico's GPIO pin 16 is activated; its corresponding LED is actiavted. When pressed the LED flashes but stays on until the button is released. This is then repeated for the buttons on GPIO pins 18 and 20. Note the corresponding icons for each button animate the pressing as well.
-
-
-https://github.com/user-attachments/assets/b06ad9e0-9034-4447-b157-dee93e7d2d23
+> As in the videoes below , the Maui phone app (BlueButtons) is connected using Bluetooth to the Sketch (PicoButtons) as below. Push Buttons are on the right _(in the video , left in the image)_ and corresponding LEDS are on the left _(in the video and on the right in the image)_. The switch/button on the Pico's GPIO pin 16 is activated; its corresponding LED is activated. When pressed the LED flashes but stays on until the button is released. This is then repeated for the buttons on GPIO pins 18 and 20. Note the corresponding icons at the top of yhe phone app for each button, animate with sketch button pressing as well.
 
 <table style="border-collapse: collapse;">
     <tr>
@@ -188,9 +180,13 @@ https://github.com/user-attachments/assets/b06ad9e0-9034-4447-b157-dee93e7d2d23
     </td>
   </tr>
   <tr>
+    <td align="center">BlueButtons Maui App</td>
+    <td align="Center">PicoButtons Sketch</td>
+  </tr>
+  <tr>
     <td valign="top"style="border: none;">
       <a href="https://github.com/user-attachments/assets/c05d2b6c-5275-4d80-86b8-aee01d7c8c96" target="_blank">
-        <img src="https://github.com/user-attachments/assets/a14de32a-fc7d-4547-b854-5b693821073c" alt="BlueSwitches" width="300">
+        <img width="300"  alt="bluesbuttons" src="https://github.com/user-attachments/assets/7690fdf9-7453-489c-b86a-c89381f8b228" />
       </a>
     </td>
     <td valign="top" style="border: none;">
@@ -200,8 +196,6 @@ https://github.com/user-attachments/assets/b06ad9e0-9034-4447-b157-dee93e7d2d23
     </td>
   </tr>
 </table>
-
-
 
 
 
