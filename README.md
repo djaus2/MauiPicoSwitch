@@ -168,7 +168,7 @@ The suite uses the Bluetooth Classic  ```Bluetooth Serial Profile (SPP)``` for c
 
 ---
 
-> As in the videos below , the Maui phone app (BlueButtons) is connected using Bluetooth to the Sketch (PicoButtons) as below. Push Buttons are on the right _(in the video , left in the image)_ and corresponding LEDS are on the left _(in the video and on the right in the image)_. The switch/button on the Pico's GPIO pin 16 is activated; its corresponding LED is activated. When pressed the LED flashes but stays on until the button is released. This is then repeated for the buttons on GPIO pins 18 and 20. Note the corresponding icons at the top of yhe phone app for each button, animate with sketch button pressing as well.
+> As in the videos below , the Maui phone app (BlueButtons) is connected using Bluetooth to the Sketch (PicoButtons) as below. Push Buttons are on the right _(in the video , left in the image)_ and corresponding LEDS are on the left _(in the video and on the right in the image)_. The switch/button on the Pico's GPIO pin 16 is activated; its corresponding LED is activated. When pressed the LED flashes but stays on until the button is released. This is then repeated for the buttons on GPIO pins 18 and 20. Note the corresponding icons at the top of the phone app for each button, animate with sketch button pressing as well.
 
 <table style="border-collapse: collapse;">
       <td align="center">PicoButtons Sketch Logical</td>
