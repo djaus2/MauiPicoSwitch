@@ -178,19 +178,32 @@ The suite uses the Bluetooth Classic  ```Bluetooth Serial Profile (SPP)``` for c
 
 https://github.com/user-attachments/assets/b06ad9e0-9034-4447-b157-dee93e7d2d23
 
-<table>
+<table style="border-collapse: collapse;">
+    <tr>
+    <td valign="bottom" style="border: none;">
+<img src="https://github.com/user-attachments/assets/e4baf986-6061-4334-aa9b-0140f6f3b78d" alt="PicoSwitches" width="300">
+    </td>
+    <td valign="bottom" style="border: none;">
+      <img src="https://github.com/user-attachments/assets/e4baf986-6061-4334-aa9b-0140f6f3b78d" alt="PicoSwitches" width="500">
+    </td>
+  </tr>
   <tr>
-    <td>
+    <td valign="top"style="border: none;">
       <a href="https://github.com/user-attachments/assets/c05d2b6c-5275-4d80-86b8-aee01d7c8c96" target="_blank">
-        <img src="https://github.com/user-attachments/assets/a14de32a-fc7d-4547-b854-5b693821073c" alt="BlueSwitches" width="200">
+        <img src="https://github.com/user-attachments/assets/a14de32a-fc7d-4547-b854-5b693821073c" alt="BlueSwitches" width="300">
       </a>
     </td>
-    <td>
+    <td valign="top" style="border: none;">
       <a href="https://github.com/user-attachments/assets/b06ad9e0-9034-4447-b157-dee93e7d2d23" target="_blank">
-        <img src="https://github.com/user-attachments/assets/e4baf986-6061-4334-aa9b-0140f6f3b78d" alt="PicoSwitches" width="200">
+        <img width="500"  alt="sketch" src="https://github.com/user-attachments/assets/4be39b6b-4728-46bf-8914-3116f43b6586" alt="PicoSwitches"  />
       </a>
     </td>
   </tr>
 </table>
+
+
+
+
+
 
 
