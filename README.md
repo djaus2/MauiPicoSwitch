@@ -169,7 +169,7 @@ The suite uses the Bluetooth Classic  ```Bluetooth Serial Profile (SPP)``` for c
 
 ---
 
-> As in the videos below , the Maui phone app (BlueButtons) is connected using Bluetooth to the Sketch (PicoButtons) as below. Push Buttons are on the right _(in the video , left in the image)_ and corresponding LEDS are on the left _(in the video and on the right in the image)_. The switch/button on the Pico's GPIO pin 16 is activated; its corresponding LED is activated. When pressed the LED flashes but stays on until the button is released. This is then repeated for the buttons on GPIO pins 18 and 20. Note the corresponding icons at the top of the phone app for each button, animate with sketch button pressing as well.
+> As in the videos below , the Maui phone app (BlueButtons) is connected using Bluetooth to the Sketch (PicoButtons) as below. Push Buttons are on the left and corresponding LEDS are on the right. The switch/button on the Pico's GPIO pin 16 is activated; its corresponding LED is activated. When pressed the LED flashes but stays on until the button is released. This is then repeated for the buttons on GPIO pins 18 and 20. Note the corresponding icons at the top of the phone app for each button, animate with sketch button pressing as well.
 
 <table style="border-collapse: collapse;">
       <td align="center">PicoButtons Sketch Logical</td>
@@ -194,14 +194,9 @@ The suite uses the Bluetooth Classic  ```Bluetooth Serial Profile (SPP)``` for c
     </td>
     <td valign="top" style="border: none;">
       <a href="https://github.com/user-attachments/assets/06b053dd-123b-4be5-b625-fdc96e389a17" target="_blank">
-        <img width="500"  alt="sketch" src="https://github.com/user-attachments/assets/4be39b6b-4728-46bf-8914-3116f43b6586" alt="PicoSwitches"  />
+        <img width="500"  alt="sketch" src="https://github.com/user-attachments/assets/0eaa24a4-b61b-4f06-a586-167ba2b18ba7" alt="PicoSwitches"  />
       </a>
     </td>
   </tr>
 </table>
-
-<a href="https://github.com/user-attachments/assets/b06ad9e0-9034-4447-b157-dee93e7d2d23">aaa</a>
-
-<a href="https://github.com/user-attachments/assets/06b053dd-123b-4be5-b625-fdc96e389a17">bbb</a>
-
 
