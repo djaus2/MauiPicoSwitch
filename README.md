@@ -199,8 +199,3 @@ The suite uses the Bluetooth Classic  ```Bluetooth Serial Profile (SPP)``` for c
   </tr>
 </table>
 
-
-<img width="400" height="512" alt="shieldconnections" src="https://github.com/user-attachments/assets/a9910a33-64ff-4b2d-9613-9ba22136141f" />
-
-
-
