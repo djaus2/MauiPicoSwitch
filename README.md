@@ -193,10 +193,15 @@ The suite uses the Bluetooth Classic  ```Bluetooth Serial Profile (SPP)``` for c
       </a>
     </td>
     <td valign="top" style="border: none;">
-      <a href="https://github.com/user-attachments/assets/b06ad9e0-9034-4447-b157-dee93e7d2d23" target="_blank">
+      <a href="https://github.com/user-attachments/assets/06b053dd-123b-4be5-b625-fdc96e389a17" target="_blank">
         <img width="500"  alt="sketch" src="https://github.com/user-attachments/assets/4be39b6b-4728-46bf-8914-3116f43b6586" alt="PicoSwitches"  />
       </a>
     </td>
   </tr>
 </table>
+
+<a href="https://github.com/user-attachments/assets/b06ad9e0-9034-4447-b157-dee93e7d2d23">aaa</a>
+
+<a href="https://github.com/user-attachments/assets/06b053dd-123b-4be5-b625-fdc96e389a17">bbb</a>
+
 
