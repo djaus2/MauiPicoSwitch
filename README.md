@@ -19,6 +19,7 @@ An Android phone app that connects to a Rpi Pico W in Arduino mode, over Classic
     - Configured as an Arduino device.
       - Using the [earlephilhower//arduino-pico](https://github.com/earlephilhower/arduino-pico) BSP.
     - Could be simply modified for other Android devices
+  - Using [Grove Rpi Pico Shield](https://www.seeedstudio.com/Grove-Shield-for-Pi-Pico-v1-0-p-4846.html), Grove Buttons and Grove LED components as in [Grove StarterKit for Rpi Pico](https://www.seeedstudio.com/Grove-Starter-Kit-for-Raspberry-Pi-Pico-p-4851.html)
   - Is connected to by the phone app using Bluetooth, and is then in Idle mode.
   - Phone can then enable one of 3 physical switches on the Pico, at a time.
     - It is then in Ready mode.
