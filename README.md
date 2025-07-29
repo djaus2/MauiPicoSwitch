@@ -168,20 +168,22 @@ The suite uses the Bluetooth Classic  ```Bluetooth Serial Profile (SPP)``` for c
 
 ---
 
-> As in the videoes below , the Maui phone app (BlueButtons) is connected using Bluetooth to the Sketch (PicoButtons) as below. Push Buttons are on the right _(in the video , left in the image)_ and corresponding LEDS are on the left _(in the video and on the right in the image)_. The switch/button on the Pico's GPIO pin 16 is activated; its corresponding LED is activated. When pressed the LED flashes but stays on until the button is released. This is then repeated for the buttons on GPIO pins 18 and 20. Note the corresponding icons at the top of yhe phone app for each button, animate with sketch button pressing as well.
+> As in the videos below , the Maui phone app (BlueButtons) is connected using Bluetooth to the Sketch (PicoButtons) as below. Push Buttons are on the right _(in the video , left in the image)_ and corresponding LEDS are on the left _(in the video and on the right in the image)_. The switch/button on the Pico's GPIO pin 16 is activated; its corresponding LED is activated. When pressed the LED flashes but stays on until the button is released. This is then repeated for the buttons on GPIO pins 18 and 20. Note the corresponding icons at the top of yhe phone app for each button, animate with sketch button pressing as well.
 
 <table style="border-collapse: collapse;">
+      <td align="center">PicoButtons Sketch Logical</td>
+    <td align="Center">PicoButtons Sketch Physical/td>
     <tr>
     <td valign="bottom" style="border: none;">
-<img src="https://github.com/user-attachments/assets/e4baf986-6061-4334-aa9b-0140f6f3b78d" alt="PicoSwitches" width="300">
+<img width="400" alt="shieldconnections" src="https://github.com/user-attachments/assets/a9910a33-64ff-4b2d-9613-9ba22136141f" />
     </td>
     <td valign="bottom" style="border: none;">
       <img src="https://github.com/user-attachments/assets/e4baf986-6061-4334-aa9b-0140f6f3b78d" alt="PicoSwitches" width="500">
     </td>
   </tr>
   <tr>
-    <td align="center">BlueButtons Maui App</td>
-    <td align="Center">PicoButtons Sketch</td>
+    <td align="center">BlueButtons Maui App Video</td>
+    <td align="Center">PicoButtons Sketch Video</td>
   </tr>
   <tr>
     <td valign="top"style="border: none;">
@@ -198,6 +200,7 @@ The suite uses the Bluetooth Classic  ```Bluetooth Serial Profile (SPP)``` for c
 </table>
 
 
+<img width="400" height="512" alt="shieldconnections" src="https://github.com/user-attachments/assets/a9910a33-64ff-4b2d-9613-9ba22136141f" />
 
 
 
