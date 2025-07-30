@@ -11,7 +11,7 @@ An Android phone app that connects to a Rpi Pico W in Arduino mode, over Classic
   - Was done as a simple request to Windsurf: 
 >_"I want to extract the non UI codeinto a separate MAUI class project called BlueButtonsLib located in same solution folder one up."_
 - Was done in about 10 minutes and works with no functional changes
-  - Needs a second action to move shodow button event handler to the lib
+  - Needs a second action to move shodow button event handlers to the lib
   - Note that rather than deleting files in the original project that were moved to the lib, they were made "Compiler Remove" or "None Include". That made the process clean and seamless
 ---
 
