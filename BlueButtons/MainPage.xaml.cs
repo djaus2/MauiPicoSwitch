@@ -1,12 +1,12 @@
-﻿
-#if ANDROID
-using PhoneBtSwitchesApp.Platforms.Android;
+﻿#if ANDROID
+using BlueButtonsLib.Platforms.Android;
 
 #endif
 
 namespace PhoneBtSwitchesApp;
 
 using Android.Graphics.Drawables;
+using BlueButtonsLib;
 using CommunityToolkit.Maui.Alerts;
 using CommunityToolkit.Maui.Behaviors;
 using CommunityToolkit.Maui.Core;

@@ -17,7 +17,7 @@
 		<ApplicationId>au.com.sportronics.BlueButtons</ApplicationId>
 
 		<!-- Versions -->
-		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+		<ApplicationDisplayVersion>1.9</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
 
 		<!-- To develop, package, and publish an app to the Microsoft Store, see: https://aka.ms/MauiTemplateUnpackaged -->
@@ -48,6 +48,9 @@
 	<ItemGroup>
 	  <Compile Remove="Platforms\Android\BluetoothReceiver.cs" />
 	  <Compile Remove="Platforms\Android\BluetoothRecvr.cs" />
+	  <Compile Remove="Platforms\Android\BluetoothReceiver_1.cs" />
+	  <Compile Remove="Platforms\Android\BluetoothScanner.cs" />
+	  <Compile Remove="AppViewModel.cs" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -55,12 +58,19 @@
 	    <ExcludeFromCurrentConfiguration>false</ExcludeFromCurrentConfiguration>
 	  </None>
 	  <None Include="Platforms\Android\BluetoothRecvr.cs" />
+	  <None Include="Platforms\Android\BluetoothReceiver_1.cs" />
+	  <None Include="Platforms\Android\BluetoothScanner.cs" />
+	  <None Include="AppViewModel.cs" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Maui" Version="12.1.0" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.90" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\BlueButtonsLib\BlueButtonsLib.csproj" />
 	</ItemGroup>
 
 </Project>
