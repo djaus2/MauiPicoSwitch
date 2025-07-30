@@ -2,6 +2,8 @@
 
 An Android phone app that connects to a Rpi Pico W in Arduino mode, over Classic Serial Bluetooth where 3 switches can trigger actions on the phone.  Bluetooth pairing by the phone between the phone and Pico device is handle programmatically for all paired/unpaired contexts.
 
+> Todo: Extract Non UI code into separate Maui Class project so can be published on NuGet. Also improve Sketch code (no functionality change).
+
 ## Apps
 
 ### BlueButtons
@@ -17,10 +19,15 @@ An Android phone app that connects to a Rpi Pico W in Arduino mode, over Classic
     - Configured as an Arduino device.
       - Using the [earlephilhower//arduino-pico](https://github.com/earlephilhower/arduino-pico) BSP.
     - Could be simply modified for other Android devices
+  - Using [Grove Rpi Pico Shield](https://www.seeedstudio.com/Grove-Shield-for-Pi-Pico-v1-0-p-4846.html), Grove Buttons and Grove LED components as in [Grove StarterKit for Rpi Pico](https://www.seeedstudio.com/Grove-Starter-Kit-for-Raspberry-Pi-Pico-p-4851.html)
   - Is connected to by the phone app using Bluetooth, and is then in Idle mode.
   - Phone can then enable one of 3 physical switches on the Pico, at a time.
     - It is then in Ready mode.
-  - The pressed and then released events are sent to the phone
+    - Its corresponding LED is activated
+    - The pressed event is sent to the phone when button is pressed.
+      - The LED flashes Off/On
+    - The released event is sent when the button is released.
+      - LED is turned off.
   - It then returns to Idle mode
 
 ## App States
@@ -30,14 +37,14 @@ Both apps are state machines. The states are
 ```cs
     public enum DeviceState
     {
-        NotConnected,
-        Idle,
-        Ready,
-        Pressed,
-        Released
+        NotConnected, // All phone app buttons disabled except Connect
+        Idle,         // All 3 app Activate Buttons plus Disconnect enabled
+        Ready,        // All phone app buttons diabled
+        Pressed,      // No change
+        Released      // No changed  ... as this is only momentary (Transitions to Idle)
     }
 ```
-To discern which button has been activated by the phone app, there is also a ```SwitchNo``` property in th e phone app, which is the pin number that the activated button is connected to on the Arduino device. This can be one of:
+To discern which button has been activated by the phone app, there is also a ```SwitchNo``` property in th e phone app, which is ...  pin number that the activated button is connected to on the Arduino device. This can be one of:
 ```cs
 16
 18
@@ -115,6 +122,38 @@ This is called by the serial reception method:
 ```
 Note that ```OnCharCmdReceived()``` is called in the MainThread context which means it can cause UI updates.
 
+## Activation by Pico
+
+> Phone App waits for DeviceState.Pressed state (eevent). Then can call a method etc depending upon which button was activated:
+
+```cs
+    private async Task OnSendRClickedAsync(object sender, EventArgs e)
+    {
+          ...
+          ...
+         // Wait until past Ready state
+          // Could already be released by here, hence < not ==
+          // i.e. Could pressed or released here.
+          while (AppViewModel.State < DeviceState.Pressed) 
+          {
+              await Task.Delay(100); // Wait for the device to respond
+          }
+          switch (AppViewModel.SwitchNo)
+          {
+              case 16:
+                  //Can insert a call to method here
+                  await Toast.Make("Button 16 pressed.", ToastDuration.Short, 14).Show();
+                  break;
+              case 18:
+                  await Toast.Make("Button 18 pressed.", ToastDuration.Short, 14).Show();
+                  break;
+              case 20:
+                  await Toast.Make("Button 20 pressed.", ToastDuration.Short, 14).Show();
+                  break;
+          }
+```
+> There is a similar switch code for the released event but it would be the pressed event that would normally be used to trigger in phone actions;
+
 ## Bluetooth
 
 The suite uses the Bluetooth Classic  ```Bluetooth Serial Profile (SPP)``` for communication between the devices. It passes messages as single characters as in the OnCharCmdReceived() method above which shows the messages sent from the Pico and how they are interpretted on the phone. The phone and Pico need to be paired and connected, and this is initiated by the phone app. 
@@ -128,7 +167,36 @@ The suite uses the Bluetooth Classic  ```Bluetooth Serial Profile (SPP)``` for c
   - It then attempts to connect.
 > Note that if the Sketch has had a new deployment of its code, then the existing pairing for it WILL fail. In that case you take the option of deleting as above, and restart the connection, where it will activate the pairing as covered here.
 
+---
 
-https://github.com/user-attachments/assets/c05d2b6c-5275-4d80-86b8-aee01d7c8c96
+> As in the videos below , the Maui phone app (BlueButtons) is connected using Bluetooth to the Sketch (PicoButtons) as below. Push Buttons are on the left and corresponding LEDS are on the right. The switch/button on the Pico's GPIO pin 16 is activated; its corresponding LED is activated. When pressed the LED flashes but stays on until the button is released. This is then repeated for the buttons on GPIO pins 18 and 20. Note the corresponding icons at the top of the phone app for each button, animate with sketch button pressing as well.
 
+<table style="border-collapse: collapse;">
+      <td align="center">PicoButtons Sketch Logical</td>
+    <td align="Center">PicoButtons Sketch Physical</td>
+    <tr>
+    <td valign="bottom" style="border: none;">
+<img width="400" alt="shieldconnections" src="https://github.com/user-attachments/assets/a9910a33-64ff-4b2d-9613-9ba22136141f" />
+    </td>
+    <td valign="bottom" style="border: none;">
+      <img src="https://github.com/user-attachments/assets/e4baf986-6061-4334-aa9b-0140f6f3b78d" alt="PicoSwitches" width="500">
+    </td>
+  </tr>
+  <tr>
+    <td align="center">BlueButtons Maui App Video</td>
+    <td align="Center">PicoButtons Sketch Video</td>
+  </tr>
+  <tr>
+    <td valign="top"style="border: none;">
+      <a href="https://github.com/user-attachments/assets/c05d2b6c-5275-4d80-86b8-aee01d7c8c96" target="_blank">
+        <img width="300"  alt="bluesbuttons" src="https://github.com/user-attachments/assets/7690fdf9-7453-489c-b86a-c89381f8b228" />
+      </a>
+    </td>
+    <td valign="top" style="border: none;">
+      <a href="https://github.com/user-attachments/assets/06b053dd-123b-4be5-b625-fdc96e389a17" target="_blank">
+        <img width="500"  alt="sketch" src="https://github.com/user-attachments/assets/0eaa24a4-b61b-4f06-a586-167ba2b18ba7" alt="PicoSwitches"  />
+      </a>
+    </td>
+  </tr>
+</table>
 
