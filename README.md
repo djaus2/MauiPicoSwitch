@@ -210,8 +210,3 @@ The suite uses the Bluetooth Classic  ```Bluetooth Serial Profile (SPP)``` for c
     </td>
   </tr>
 </table>
-
-
-https://github.com/user-attachments/assets/1888fa60-9b2a-46fb-ab8e-1071e4be8ded
-
-
